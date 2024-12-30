@@ -1,4 +1,4 @@
-# 42 OAuth Authentication System
+im# 42 OAuth Authentication System
 
 ## Overview
 This project implements a secure authentication system using 42's OAuth service. It provides a simple and efficient way to authenticate users through their 42 accounts, built with Express.js and TypeScript.
@@ -141,14 +141,14 @@ For detailed information on how the 42 API works, please refer to the [42 API Do
 
 2. **Connect to the Node.js container**:
     ```bash
-    docker exec -it <container_name> /bin/bash
+    docker exec -it <container_name> sh
     ```
     Replace `<container_name>` with the name of your Node.js container.
 
 ## Running the Migration Script
 
 1. **Run the migration script inside the container**:
-    ```bash
+    ```sh
     make migration-run
     ```
 
