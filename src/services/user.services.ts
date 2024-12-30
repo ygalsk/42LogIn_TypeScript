@@ -1,28 +1,54 @@
-interface User {
-    id: string;
-    username: string;
-    email?: string;
-  }
-  
-  export class UserService {
-    private users: Map<string, User> = new Map();
-  
-    async findOrCreate(profile: any): Promise<User> {
-      let user = this.users.get(profile.id);
-      
-      if (!user) {
-        user = {
-          id: profile.id,
-          username: profile.username,
-          email: profile.emails?.[0]?.value
-        };
-        this.users.set(profile.id, user);
-      }
-      
-      return user;
+import { User } from '../entities/User';
+import AppDataSource from '../config/database';
+import { Repository } from 'typeorm';
+
+interface ProfileUpdateData {
+    displayName?: string;
+    bio?: string;
+    language?: string;
+}
+
+export class UserService {
+    private userRepository: Repository<User>;
+
+    constructor() {
+        this.userRepository = AppDataSource.getRepository(User);
     }
-  
-    async findById(id: string): Promise<User | undefined> {
-      return this.users.get(id);
+
+    async findById(id: string): Promise<User | null> {
+        return await this.userRepository.findOne({
+            where: { id }
+        });
     }
-  }
+
+    async updateProfile(userId: string, data: ProfileUpdateData): Promise<User> {
+        const user = await this.userRepository.findOne({
+            where: { id: userId }
+        });
+
+        if (!user) {
+            throw new Error('User not found');
+        }
+
+        Object.assign(user, data);
+        return await this.userRepository.save(user);
+    }
+
+    async findOrCreate(userData: Partial<User>): Promise<User> {
+        if (!userData.id) {
+            throw new Error('User ID is required');
+        }
+
+        let user = await this.userRepository.findOne({
+            where: { id: userData.id }
+        });
+
+        if (!user) {
+            user = this.userRepository.create(userData);
+        } else {
+            Object.assign(user, userData);
+        }
+
+        return await this.userRepository.save(user);
+    }
+}

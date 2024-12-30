@@ -11,7 +11,7 @@ export class AuthController {
   public callback42 = (req: Request, res: Response, next: NextFunction): void => {
     passport.authenticate('42', {
       successRedirect: '/api/profile',
-      failureRedirect: '/login',
+      failureRedirect: '/logfail',
       failureFlash: false
     })(req, res, next);
   };

@@ -1,17 +1,50 @@
-version: '3.8'
-
 services:
   app:
     build: .
     ports:
       - "8000:8000"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - CLIENT_ID=${CLIENT_ID}
       - CLIENT_SECRET=${CLIENT_SECRET}
       - REDIRECT_URI=${REDIRECT_URI}
       - COOKIE_KEY=${COOKIE_KEY}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=ft_oauth
     volumes:
       - ./src:/usr/src/app/src
       - ./public:/usr/src/app/public
-    command: npm run dev
+      - /usr/src/app/node_modules
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ft_oauth
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
