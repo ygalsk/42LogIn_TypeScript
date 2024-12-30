@@ -4,7 +4,7 @@ import session from 'express-session';
 import passport from 'passport';
 import dotenv from 'dotenv';
 import path from 'path';
-import AppDataSource from './config/database';
+import { AppDataSource } from './config/database';
 import initializePassport from './config/passport';
 import { authRouter } from './routes/auth.routes';
 import { userRouter } from './routes/user.routes';

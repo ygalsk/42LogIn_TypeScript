@@ -15,10 +15,7 @@ export class User {
     displayName: string;
 
     @Column({ nullable: true })
-    bio: string;
-
-    @Column({ default: 'en' })
-    language: string;
+    imageUrl: string;
 
     @Column({ default: 0 })
     loginCount: number;

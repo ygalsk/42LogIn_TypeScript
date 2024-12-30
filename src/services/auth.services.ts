@@ -1,5 +1,5 @@
 import { User } from '../entities/User';
-import AppDataSource from '../config/database';
+import { AppDataSource } from '../config/database';
 import { Entity, PrimaryGeneratedColumn, Column, Repository } from 'typeorm';
 
 @Entity('activity')

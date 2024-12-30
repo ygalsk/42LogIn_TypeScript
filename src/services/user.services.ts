@@ -1,5 +1,5 @@
 import { User } from '../entities/User';
-import AppDataSource from '../config/database';
+import { AppDataSource } from '../config/database';
 import { Repository } from 'typeorm';
 
 interface ProfileUpdateData {
