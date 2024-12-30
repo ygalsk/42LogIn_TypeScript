@@ -1,0 +1,85 @@
+<!-- public/views/user-data.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data - 42 OAuth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/user-data.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="icon fas fa-sun"></i>
+    </button>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- User Profile Section -->
+        <section class="card profile-section">
+            <div id="user-profile">
+                <div class="profile-header">
+                    <img id="user-image" src="" alt="Profile Picture" class="profile-image">
+                    <div class="profile-info">
+                        <h1 id="user-name">Loading...</h1>
+                        <p id="user-email" class="subtitle"></p>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Level</h3>
+                        <p id="user-level">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Achievements</h3>
+                        <p id="achievement-count">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Projects</h3>
+                        <p id="project-count">-</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="card projects-section">
+            <h2><i class="fas fa-tasks"></i> Projects</h2>
+            <div id="projects-list" class="projects-grid"></div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="card achievements-section">
+            <h2><i class="fas fa-award"></i> Achievements</h2>
+            <div id="achievements-list" class="achievements-grid"></div>
+        </section>
+
+        <!-- Coalition Section -->
+        <section class="card coalition-section">
+            <h2><i class="fas fa-flag"></i> Coalition</h2>
+            <div id="coalition-info"></div>
+        </section>
+
+        <!-- Campus Stats Section -->
+        <section class="card campus-section">
+            <h2><i class="fas fa-university"></i> Campus Statistics</h2>
+            <div id="campus-stats"></div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/user-data.js"></script>
+</body>
+</html>

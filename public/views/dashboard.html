@@ -1,0 +1,105 @@
+<!-- public/views/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - 42 OAuth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="icon fas fa-sun"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="card dashboard-card">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img id="profile-image" src="" alt="Profile Picture" class="avatar">
+                <div class="status-badge" title="Online Status"></div>
+            </div>
+            <div class="profile-info">
+                <h1 id="username"></h1>
+                <p id="email" class="subtitle"></p>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span id="last-login"></span>
+                <label>Last Login</label>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span id="account-age"></span>
+                <label>Account Age</label>
+            </div>
+        </div>
+
+        <!-- Resource Grid -->
+        <div class="resource-grid">
+            <a href="https://42peerfinder.com/intra" target="_blank" class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="resource-info">
+                    <h3>42 Peer Finder</h3>
+                    <p>Find peers for project evaluation</p>
+                </div>
+                <div class="resource-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <a href="https://www.42evals.com/" target="_blank" class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="resource-info">
+                    <h3>42 Evaluations</h3>
+                    <p>Track your evaluation progress</p>
+                </div>
+                <div class="resource-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <a href="/profile" class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="resource-info">
+                    <h3>Profile Settings</h3>
+                    <p>View and edit your profile</p>
+                </div>
+                <div class="resource-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+
+            <a href="/auth/logout" class="resource-card logout-card">
+                <div class="resource-icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+                <div class="resource-info">
+                    <h3>Logout</h3>
+                    <p>End your session</p>
+                </div>
+                <div class="resource-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/theme.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

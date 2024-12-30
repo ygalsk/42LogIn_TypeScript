@@ -1,21 +1,60 @@
+<!-- profile.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - 42 OAuth</title>
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="icon fas fa-sun"></i>
+    </button>
+
+    <!-- Main Card -->
     <div class="card">
-        <div id="profile-info">
-            <p>Loading profile information...</p>
+        <!-- Profile Info Container -->
+        <div id="profile-info" class="fade-in">
+            <div class="loading"></div>
         </div>
+
+        <!-- Stats Section (Initially Hidden) -->
+        <div id="stats-container" class="stats-section" style="display: none;">
+            <h2>Activity Stats</h2>
+            <div class="stats-grid"></div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button id="refresh-btn" class="action-button" title="Refresh Data">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+            <button id="stats-toggle" class="action-button" title="Toggle Stats">
+                <i class="fas fa-chart-bar"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Buttons -->
         <div class="button-group">
-            <a href="/auth/logout" class="button">Logout</a>
-            <a href="/" class="button" style="background-color: #6c757d;">Home</a>
+            <a href="/auth/logout" class="button primary">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+<!-- In profile.html, update the home button -->
+        <a href="/dashboard" class="button secondary">
+            <i class="fas fa-home"></i>
+            Dashboard
+        </a>
         </div>
     </div>
+
+    <!-- Scripts -->
     <script src="/js/main.js"></script>
 </body>
 </html>

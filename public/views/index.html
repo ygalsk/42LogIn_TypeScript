@@ -1,16 +1,58 @@
+<!-- index.html (home page) -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42 OAuth Application</title>
+    <title>42 OAuth - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="card">
-        <h1>Welcome to 42 OAuth Demo</h1>
-        <p>This is a demonstration of OAuth authentication using 42 API.</p>
-        <a href="/auth/42" class="button">Login with 42</a>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="icon fas fa-sun"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="card home-card">
+        <div class="logo-container">
+            <img src="https://42.fr/wp-content/uploads/2021/05/42-Final-sigle-seul.svg" alt="42 Logo" class="logo">
+        </div>
+        
+        <h1 class="slide-up">Welcome to 42 OAuth</h1>
+        
+        <div class="feature-grid">
+            <div class="feature-item slide-up" style="--delay: 0.1s">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Authentication</h3>
+                <p>Login securely with your 42 credentials</p>
+            </div>
+            <div class="feature-item slide-up" style="--delay: 0.2s">
+                <i class="fas fa-user-circle"></i>
+                <h3>Profile Management</h3>
+                <p>View and manage your profile information</p>
+            </div>
+            <div class="feature-item slide-up" style="--delay: 0.3s">
+                <i class="fas fa-chart-line"></i>
+                <h3>Activity Tracking</h3>
+                <p>Monitor your login activity and statistics</p>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a href="/login" class="button primary">
+                <i class="fas fa-sign-in-alt"></i>
+                Get Started
+            </a>
+            <a href="https://42.fr" target="_blank" class="button secondary">
+                <i class="fas fa-external-link-alt"></i>
+                Learn More
+            </a>
+        </div>
     </div>
+
+    <script src="/js/theme.js"></script>
 </body>
 </html>
