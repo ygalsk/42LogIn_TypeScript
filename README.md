@@ -44,7 +44,7 @@ Before you begin, ensure you have installed:
 1. **Running the Application**:
     - Start the development server:
       ```bash
-      make dev
+      make docker-build && make docker-up
       ```
 
 2. **Access the Application**:
