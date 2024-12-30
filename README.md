@@ -1,4 +1,4 @@
-im# 42 OAuth Authentication System
+# 42 OAuth Authentication System
 
 ## Overview
 This project implements a secure authentication system using 42's OAuth service. It provides a simple and efficient way to authenticate users through their 42 accounts, built with Express.js and TypeScript.
