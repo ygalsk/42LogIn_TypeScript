@@ -96,16 +96,16 @@ function updateCampusStats(campusData) {
     // You might want to use Chart.js for this
 }
 
-function showError(message) {
-    const container = document.querySelector('.container');
-    container.innerHTML = `
-        <div class="error-card">
-            <i class="fas fa-exclamation-circle"></i>
-            <h2>Error</h2>
-            <p>${message}</p>
-            <button onclick="location.reload()" class="retry-button">
-                <i class="fas fa-redo"></i> Retry
-            </button>
-        </div>
-    `;
-}
+// function showError(message) {
+//     const container = document.querySelector('.container');
+//     container.innerHTML = `
+//         <div class="error-card">
+//             <i class="fas fa-exclamation-circle"></i>
+//             <h2>Error</h2>
+//             <p>${message}</p>
+//             <button onclick="location.reload()" class="retry-button">
+//                 <i class="fas fa-redo"></i> Retry
+//             </button>
+//         </div>
+//     `;
+// }

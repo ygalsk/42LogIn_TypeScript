@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Set profile image (assuming you have an image URL in the user data)
             const profileImage = document.getElementById('profile-image');
-            profileImage.src = data.user.avatarUrl || 'https://cdn.intra.42.fr/users/default.png';
+            profileImage.src = data.user.imageUrl || 'https://42.fr/wp-content/uploads/2021/05/42-Final-sigle-seul.svg';
             profileImage.onerror = () => {
-                profileImage.src = 'https://cdn.intra.42.fr/users/default.png';
+                profileImage.src = 'https://42.fr/wp-content/uploads/2021/05/42-Final-sigle-seul.svg';
             };
 
             // Update last login

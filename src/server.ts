@@ -87,6 +87,10 @@ function startServer() {
         res.sendFile(path.join(__dirname, '../public/views/dashboard.html'));
     });
 
+    app.get('/user-data', isAuthenticated, (_req, res) => {
+        res.sendFile(path.join(__dirname, '../public/views/user-data.html'));
+    });
+
     // API routes
     app.use('/auth', authRouter);
     app.use('/api', userRouter);

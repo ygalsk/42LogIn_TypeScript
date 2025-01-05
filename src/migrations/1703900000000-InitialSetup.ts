@@ -4,7 +4,7 @@ export class InitialSetup1703900000000 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         // Create users table
         await queryRunner.query(`
-            CREATE TABLE "users" (
+            CREATE TABLE IF NOT EXISTS "users" (
                 "id" VARCHAR PRIMARY KEY,
                 "username" VARCHAR NOT NULL,
                 "email" VARCHAR,
