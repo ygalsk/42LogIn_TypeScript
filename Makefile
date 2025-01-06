@@ -76,7 +76,7 @@ docker-prod-down:
 
 .PHONY: typeorm
 typeorm:
-	$(NPM) run typeorm
+	$(NPM) run typeorm schema:sync -- -d ./datasource.ts
 
 .PHONY: migration-generate
 migration-generate:
